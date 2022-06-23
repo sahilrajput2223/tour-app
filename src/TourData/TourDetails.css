@@ -1,4 +1,55 @@
 .image {
     width: 100%;
-    height: 600px;
+    border-radius: 10px 10px 0px 0px;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.artical {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 50px lightgray;
+}
+
+.footer {
+    padding: 0% 10% 0% 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tourPrice {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgba(209, 233, 234, 0.5);
+    color: #49a6e9;
+}
+
+.tourDesc {
+    color: #617d98;
+    text-align: justify;
+}
+
+.notInterestedBtn {
+    width: max-content;
+    margin: 20px;
+    padding: 3px 50px;
+    font-size: medium;
+    background: transparent;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #bb2525;
+    align-self: center;
+    border: 1px solid #bb2525;
+    border-radius: 5px;
 }
