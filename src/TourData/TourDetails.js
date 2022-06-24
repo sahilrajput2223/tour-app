@@ -2,7 +2,7 @@ import React from "react";
 
 import "./TourDetails.css"
 
-const TourDetails = ({ tourImg, tourTitle, tourDesc, tourPrice }) => {
+const TourDetails = ({ id, tourImg, tourTitle, tourDesc, tourPrice, removeTour }) => {
 
     const [isRead, setIsRead] = React.useState(true);
 
@@ -22,7 +22,7 @@ const TourDetails = ({ tourImg, tourTitle, tourDesc, tourPrice }) => {
                     {!isRead && <button className="readBtn" onClick={() => setIsRead(true)}>Show Less</button>}
 
                 </div>
-                <button className="notInterestedBtn">not interested</button>
+                <button className="notInterestedBtn" onClick={() => { removeTour(id) }}>not interested</button>
             </footer>
         </article>
     );

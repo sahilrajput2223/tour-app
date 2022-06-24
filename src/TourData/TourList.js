@@ -5,14 +5,19 @@ const data = [{ "id": "rec6d6T3q5EBIdCfD", "name": "Best of Paris in 7 Days Tour
 
 const TourList = () => {
 
-    const [tourData, setTourDate] = React.useState(data);
+    const [tourData, setTourData] = React.useState(data);
+
+    const removeTourData = (id) => {
+        const newTourData = tourData.filter((tour) => tour.id !== id);
+        setTourData(newTourData)
+    }
 
     return (
         <div>
             {tourData.map((tour) => {
                 const { id, image, name, info, price } = tour
                 return (
-                    <TourDetails key={id} tourImg={image} tourTitle={name} tourDesc={info} tourPrice={price} />
+                    <TourDetails key={id} id={id} tourImg={image} tourTitle={name} tourDesc={info} tourPrice={price} removeTour={removeTourData} />
                 );
             })}
         </div>
