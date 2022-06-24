@@ -52,4 +52,16 @@
     align-self: center;
     border: 1px solid #bb2525;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.readBtn {
+    padding: 0%;
+    margin-left: 1%;
+    background: transparent;
+    width: max-content;
+    color: #49a6e9;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-color: transparent;
 }
