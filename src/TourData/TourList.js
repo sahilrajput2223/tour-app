@@ -18,7 +18,9 @@ const TourList = () => {
             })
             .then((touDataFromAPI) => {
                 setTourData(touDataFromAPI)
-            });
+                setIsLoading(false)
+            })
+            .catch((error) => { console.log(error) });
 
     }, []);
 
