@@ -9,12 +9,19 @@ const TourList = () => {
 
     const [tourData, setTourData] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
+    const [isError, setIsError] = React.useState(false);
 
     React.useEffect(() => {
         console.log("use effect called")
         fetch(dataUrl)
             .then((response) => {
-                return response.json();
+                if (response.status === 200) {
+                    return response.json()
+                } else {
+                    setIsError(true)
+                    setIsLoading(false)
+                    throw new Error(response.statusText)
+                }
             })
             .then((touDataFromAPI) => {
                 setTourData(touDataFromAPI)
@@ -39,6 +46,15 @@ const TourList = () => {
         );
     }
 
+    if (isError) {
+        return (
+            <div className="error">
+                <h2>
+                    Error ...
+                </h2>
+            </div>
+        );
+    }
     return (
         <div>
             {tourData.map((tour) => {

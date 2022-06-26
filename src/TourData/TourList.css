@@ -7,3 +7,13 @@
     align-items: center;
     letter-spacing: 1px;
 }
+
+.error {
+    color: rgb(179, 53, 53);
+    text-transform: capitalize;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 1px;
+}
