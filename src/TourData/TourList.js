@@ -1,11 +1,14 @@
 import React from "react";
 import TourDetails from "./TourDetails";
 
+import "./TourList.css";
+
 const dataUrl = "https://course-api.com/react-tours-project";
 
 const TourList = () => {
 
     const [tourData, setTourData] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {
         console.log("use effect called")
@@ -22,6 +25,16 @@ const TourList = () => {
     const removeTourData = (id) => {
         const newTourData = tourData.filter((tour) => tour.id !== id);
         setTourData(newTourData)
+    }
+
+    if (isLoading) {
+        return (
+            <div className="loading">
+                <h2>
+                    Loading ...
+                </h2>
+            </div>
+        );
     }
 
     return (
